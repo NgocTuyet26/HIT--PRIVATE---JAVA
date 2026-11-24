@@ -7,7 +7,7 @@ public class CartItem {
     public CartItem(Product product, int quantity) {
 
         if(product == null ){
-            throw new IllegalArgumentException("Gio hang trong !");
+            throw new IllegalArgumentException("San pham khong duoc null !");
         }
         if(quantity <= 0){
             throw new IllegalArgumentException("So luong phai > 0 !");
@@ -25,6 +25,9 @@ public class CartItem {
     }
 
     public void setQuantity(int quantity) {
+        if (quantity <= 0) {
+            throw new IllegalArgumentException("So luong phai > 0 !");
+        }
         this.quantity = quantity;
     }
 

@@ -46,6 +46,9 @@ public class Product {
     }
 
     public void setPrice(double price) {
+        if (price <= 0) {
+            throw new IllegalArgumentException("Gia phai > 0 !");
+        }
         this.price = price;
     }
 
@@ -53,7 +56,7 @@ public class Product {
         if (quantity <= 0 || quantity > stock) {
             throw new IllegalArgumentException("So luong khong hop le !");
         }
-        stock = -quantity;
+        stock -= quantity;
     }
 
     public String getDescription() {
